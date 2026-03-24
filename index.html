@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Game</title>
+</head>
+<body style="text-align:center;">
+
+    <h1>Click Game 🎮</h1>
+    <h2 id="count">0</h2>
+
+    <button onclick="clickGame()">Click Me</button>
+
+    <script>
+        function clickGame() {
+            fetch('/click')
+                .then(function(res) {
+                    return res.text();
+                })
+                .then(function(data) {
+                    document.getElementById('count').innerText = data;
+                });
+        }
+    </script>
+
+</body>
+</html>
